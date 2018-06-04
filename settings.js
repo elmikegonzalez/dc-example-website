@@ -17,7 +17,8 @@ module.exports = {
             slots: {
                 "content": "d364a3f8-16b1-47a9-b513-4d53ad90b322",
                 "video": "2612f9c2-370b-481d-877a-677453a1f5b9",
-                "splitblock":"7b2d44dc-4b09-4543-a9a2-b70a21ddae79"
+                "splitblock":"7b2d44dc-4b09-4543-a9a2-b70a21ddae79",
+                "homepage" : "dcd10172-05cd-4938-9733-04f25eb158c3"
             }
         }
     ]
