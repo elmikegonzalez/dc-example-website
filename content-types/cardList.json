@@ -1,6 +1,6 @@
 {
   "$schema": "http://bigcontent.io/cms/schema/v1/schema#",
-  "id": "https://raw.githubusercontent.com/neilmistryamplience/dc-example-website/master/content-types/cardList.json",
+  "id": "https://raw.githubusercontent.com/neilmistryamplience/dc-example-website/willow/content-types/cardList.json",
   "title": "Card List",
   "description": "A list of cards",
   "allOf": [
@@ -23,6 +23,11 @@
       "title": "Hero format",
       "description": "Hero format supports exactly 3 cards"
     },
+    "slider":{
+      "type": "boolean",
+      "title": "Slider",
+      "description": "Does the card list display as a slider? If so it will show a maximum of 3 at one time and no hero list"
+    },
     "cards": {
       "type": "array",
       "title": "Cards",
@@ -37,7 +42,7 @@
               "contentType": {
                 "title": "",
                 "enum": [
-                  "https://raw.githubusercontent.com/neilmistryamplience/dc-example-website/master/content-types/card.json"
+                  "https://raw.githubusercontent.com/neilmistryamplience/dc-example-website/willow/content-types/card.json"
                 ]
               }
             }
@@ -51,6 +56,7 @@
   "propertyOrder": [
     "header",
     "heroList",
+    "slider",
     "cards"
   ]
 }

@@ -1,6 +1,6 @@
 {
   "$schema": "http://bigcontent.io/cms/schema/v1/schema#",
-  "id": "https://raw.githubusercontent.com/neilmistryamplience/dc-example-website/master/content-types/card.json",
+  "id": "https://raw.githubusercontent.com/neilmistryamplience/dc-example-website/willow/content-types/card.json",
   "title": "Card",
   "description": "A single card of content",
   "allOf": [
@@ -12,21 +12,11 @@
   "properties": {
     "image": {
       "type": "object",
-      "title": "image",
+      "title": "Image",
       "description": "Image used in the card",
       "allOf": [
         {
-          "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
-        },
-        {
-          "properties": {
-            "contentType": {
-              "title": "Image",
-              "enum": [
-                "https://raw.githubusercontent.com/neilmistryamplience/dc-example-website/master/content-types/image.json"
-              ]
-            }
-          }
+          "$ref": "https://raw.githubusercontent.com/neilmistryamplience/dc-example-website/willow/content-types/image.json"
         }
       ]
     },
@@ -51,10 +41,18 @@
       "title": "Links",
       "description": "Links for the card",
       "items": {
-        "$ref": "https://raw.githubusercontent.com/neilmistryamplience/dc-example-website/master/content-types/link.json"
+        "$ref": "https://raw.githubusercontent.com/neilmistryamplience/dc-example-website/willow/content-types/link.json"
       },
       "minItems": 0,
       "maxItems": 4
+    },
+    "style": {
+      "type": "string",
+      "title": "Style",
+      "description": "Add classname for CSS styling",
+      "validation": "Please enter between 0 and 100 characters",
+      "minLength": 0,
+      "maxLength": 100
     }
   }
 }

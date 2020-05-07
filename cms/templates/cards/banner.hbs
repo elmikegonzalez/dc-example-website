@@ -1,0 +1,9 @@
+{{#if img}}
+    <div class="dc-card dc-card-image dc-card-banner">
+        <img data-src="//{{img.image.defaultHost}}/i/{{img.image.endpoint}}/{{img.image.name}}.webp?w=500&aspect=1.4:1&sm=aspect&poi={($root.layer0.metadata.pointOfInterest.w==0)?0.5:$root.layer0.metadata.pointOfInterest.x},{($root.layer0.metadata.pointOfInterest.w==0)?0.5:$root.layer0.metadata.pointOfInterest.y},{$root.layer0.metadata.pointOfInterest.w},{$root.layer0.metadata.pointOfInterest.h}&scaleFit=poi" />
+
+        {{#if contentImg}}
+            <img class="dc-card-image-overlay" data-src="//{{contentImg.image.defaultHost}}/i/{{contentImg.image.endpoint}}/{{contentImg.image.name}}.webp?" />
+        {{/if}}
+    </div>
+{{/if}}

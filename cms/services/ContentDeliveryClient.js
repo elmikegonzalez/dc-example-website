@@ -29,15 +29,21 @@ ContentDeliveryClient.prototype.query = function(query, scope, fullBodyObject) {
             '?query=' + encodeURIComponent(JSON.stringify(query)) +
             '&store=' + encodeURIComponent(this.account) +
             '&scope=' + encodeURIComponent(scope) +
-            '&fullBodyObject=' + encodeURIComponent(fullBodyObject);
-    console.log(url)
+            '&fullBodyObject=' + encodeURIComponent(fullBodyObject) +
+            '&locale=en-US';
+    console.log('query: ' + JSON.stringify(query));
+    console.log('store: ' + encodeURIComponent(this.account));
+    console.log('scope: ' + encodeURIComponent(scope));
+    console.log('fullBodyObject: ' + fullBodyObject);
+    console.log('locale: en-US');
+    console.log('url: ' + url);
 
     return new Promise(function(resolve, reject) {
         request(url, function (error, response, body) {
             if(error) {
                 reject(error);
             }else{
-                console.log(body)
+                console.log(JSON.parse(body));
                 resolve(JSON.parse(body));
             }
         });

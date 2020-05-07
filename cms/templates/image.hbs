@@ -1,8 +1,9 @@
 <div class="amp-ca-image-holder">
+    {{debug}}
     <picture class="amp-ca-image">
         {{#compare display '==' 'Static'}}
-            <img src="//neildemo.a.bigcontent.io/v1/static/{{image.name}}{{#if seoText}}/{{escape seoText}}{{/if}}" class="amp-ca-image-pic" {{#if imageAltText}} alt="{{imageAltText}}" {{/if}} {{#if seoText}} title="{{seoText}}" {{/if}} /> 
-        {{/compare}} 
+            <img src="//neildemo.a.bigcontent.io/v1/static/{{image.name}}{{#if seoText}}/{{escape seoText}}{{/if}}" class="amp-ca-image-pic" {{#if imageAltText}} alt="{{imageAltText}}" {{/if}} {{#if seoText}} title="{{seoText}}" {{/if}} />
+        {{/compare}}
         {{#compare display '!=' 'Static'}}
         <source srcset="//{{image.defaultHost}}/i/{{image.endpoint}}/{{image.name}}{{#if seoText}}/{{escape seoText}}{{/if}}.webp?w=1600{{#compare display '==' 'Point of Interest'}}&$poi$&aspect=2.6:1{{/compare}}{{#roundelProperties}}&$roundel$&{{roundelConfig roundel}}{{/roundelProperties}}&upscale=false&fmt.jpeg.interlaced=true 1x, //{{image.defaultHost}}/i/{{image.endpoint}}/{{image.name}}{{#if seoText}}/{{escape seoText}}{{/if}}.webp?w=3200{{#compare display '==' 'Point of Interest'}}&$poi$&aspect=2.6:1{{/compare}}{{#roundelProperties}}&$roundel$&{{roundelConfig roundel}}{{/roundelProperties}}&upscale=false&fmt.jpeg.interlaced=true 2x" media="(min-width: 1280px)" type="image/webp">
         <source srcset="//{{image.defaultHost}}/i/{{image.endpoint}}/{{image.name}}{{#if seoText}}/{{escape seoText}}{{/if}}?w=1600{{#compare display '==' 'Point of Interest'}}&$poi$&aspect=2.6:1{{/compare}}{{#roundelProperties}}&$roundel$&{{roundelConfig roundel}}{{/roundelProperties}}&upscale=false&fmt.jpeg.interlaced=true 1x, //{{image.defaultHost}}/i/{{image.endpoint}}/{{image.name}}{{#if seoText}}/{{escape seoText}}{{/if}}?w=3200{{#compare display '==' 'Point of Interest'}}&$poi$&aspect=2.6:1{{/compare}}{{#roundelProperties}}&$roundel$&{{roundelConfig roundel}}{{/roundelProperties}}&upscale=false&fmt.jpeg.interlaced=true 2x" media="(min-width: 1280px)">

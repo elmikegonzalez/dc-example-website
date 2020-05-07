@@ -1,0 +1,98 @@
+.amp-ca-product-image-holder {
+    position: relative;
+    width: auto;
+
+    @media screen and (min-width: 320px) {
+         height: 320px;
+    }
+
+    @media screen and (min-width: 768px) {
+         height: 768px;
+    }
+
+    @media screen and (min-width: 1024px) {
+         height: 1024px;
+    }
+
+    @media screen and (min-width: 1280px) {
+         height: 1280px;
+    }
+    
+    
+    
+}
+
+.amp-ca-product-image {
+    position: relative;
+    overflow: hidden;
+    white-space: nowrap;
+    width: auto;
+    display: block;
+    width: 80%;
+    float: left;
+    img {
+        width: 100%;
+        user-select: none;
+    }
+}
+
+.amp-ca-product-attribute-holder {
+
+    width: 20%;
+    height: 100%;
+    float: left;
+    display: flex;
+
+    -webkit-writing-mode: vertical-lr;
+    /* old Win safari */
+    writing-mode: vertical-lr;
+    writing-mode: tb-lr;
+    /* actually 
+    writing-mode:sideways-lr; would be the one , but not avalaible everywhere so, let's transform */
+    transform: scale(-1, -1);
+    text-align: center; //width: 1.5em;
+
+    .amp-ca-product-category-holder {
+
+        .amp-ca-product-category-text-holder {
+            font-family: 'Open Sans', sans-serif; //white-space:nowrap;
+            color: white;
+            font-size: 7em;
+            font-size: 10vw;
+            height: 100%;
+            width: auto;
+            margin: auto;
+        }
+        background-color: rgb(131,15,16);
+        border-radius: 0px 1em 0px 0px;
+        width:100%;
+        height:80%;
+        display:grid;
+        margin-top: 0.4em;
+    }
+    .amp-ca-product-volume-holder{
+      width:100%;
+      height:20%;
+      background-color: rgb(0, 0, 0);
+       -webkit-writing-mode: horizontal-tb;
+      /* old Win safari */
+      writing-mode: horizontal-tb;
+      writing-mode: tb-lr;
+      /* actually 
+      writing-mode:sideways-lr; would be the one , but not avalaible everywhere so, let's transform */
+      transform: scale(-1, -1);
+      border-radius: 1em 0px 0px 0px;
+      margin-bottom: 0.4em;
+      display:grid;
+
+      .amp-ca-product-volume-text-holder{
+        font-family: 'Open Sans', sans-serif; //white-space:nowrap;
+            color: white;
+            font-size: 7em;
+            font-size: 8vw;
+            width: auto;
+            margin: auto;
+            line-height: 1em;
+          }
+    }
+}

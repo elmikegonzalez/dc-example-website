@@ -1,0 +1,38 @@
+﻿{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "id": "https://raw.githubusercontent.com/zestrax/dynamic-content-samples/Development/content-types/component-libraries/color-content-type-library.json",
+    "type": "object",
+    "title": "Core type schema",
+    "description": "core content type components to build content types",
+    "additionalProperties": false,
+    "definitions": {
+        "web-color": {
+            "title": "Colors",
+            "enum": [
+                "black",
+                "White",
+                "Silver",
+                "Gray",
+                "Red",
+                "Maroon",
+                "Yellow",
+                "Olive",
+                "Lime",
+                "Green",
+                "Aqua",
+                "Teal",
+                "Blue",
+                "Navy",
+                "Fuchsia",
+                "Purple"
+            ]
+        },
+        "color-code": {
+            "title": "Color Code",
+            "description":"color code e.g. #ffffff or #ffff ",
+            "type": "string",
+            "format":"text",
+            "pattern": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$"
+        }
+    }
+}

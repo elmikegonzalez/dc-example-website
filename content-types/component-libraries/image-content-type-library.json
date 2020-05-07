@@ -1,0 +1,39 @@
+﻿{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "id": "https://raw.githubusercontent.com/neilmistryamplience/dc-example-website/willow/content-types/component-libraries/image-content-type-library.json",
+    "type": "object",
+    "title": "Core type schema for dealing with images",
+    "description": "schemas to wrap the image object",
+    "definitions": {
+        "descriptive-image": {
+            "type": "object",
+            "title": "IMAGE",
+            "properties": {
+                "image-name": {
+                    "type": "string",
+                    "title": "Image name",
+                    "format": "text"
+                },
+                "image-description": {
+                    "type": "string",
+                    "title": "Image description",
+                    "format": "text"
+                },
+                "image-alt": {
+                    "type": "string",
+                    "title": "Image ALT text",
+                    "format": "text"
+                },
+                "image": {
+                    "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+                }
+            },
+            "propertyOrder": [
+                "image-name",
+                "image-descriptiont",
+                "image-alt",
+                "image"
+            ]
+        }
+    }
+}

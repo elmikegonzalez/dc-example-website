@@ -1,0 +1,58 @@
+{
+    "$schema": "http://bigcontent.io/cms/schema/v1/schema#",
+    "id": "https://raw.githubusercontent.com/neilmistryamplience/dc-example-website/willow/content-types/shoppableVideo.json",
+    "title": "Shoppable Video",
+    "description": "Shoppable Video",
+    "allOf": [
+      {
+        "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content"
+      }
+    ],
+    "type": "object",
+    "properties": {
+      "video": {
+        "type": "object",
+        "title": "Video",
+        "description": "The video to display",
+        "anyOf": [
+          {
+            "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/video-link"
+          }
+        ]
+      },
+      "products": {
+        "type": "array",
+        "title": "Products",
+        "items": {
+          "type": "object",
+          "properties": {
+            "timestamp": {
+                "type": "string",
+                "title": "Timestamp (mm:ss)",
+                "pattern": "\\d{1,2}:\\d{1,2}"
+            },
+            "name": {
+                "type": "string",
+                "title": "Product Name"
+            },
+            "image": {
+                "title": "Product Image",
+                "anyOf": [
+                    {
+                        "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+                    }
+                ]
+            },
+            "price": {
+                "type": "string",
+                "title": "Product Price"
+            }
+          },
+          "propertyOrder": ["timestamp", "name", "image", "price"],
+          "required": ["timestamp", "name", "image", "price"]
+        }
+      }
+    },
+    "propertyOrder": ["video", "products"],
+    "required": ["video"]
+  }

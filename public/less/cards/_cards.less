@@ -1,0 +1,48 @@
+.dc-card__container {
+
+    .dc-card:not(:first-of-type) {
+        display: none;
+    }
+
+    .dc-card {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        overflow: hidden;
+    }
+
+    .dc-card-image {
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .dc-card-image-overlay {
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        object-fit: scale-down !important;
+    }
+
+    .dc-card-text {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: Roboto,sans-serif;
+        color: #17202b;
+        font-size: 24px;
+    }
+    
+    .dc-card-markdown-text {
+        display: block;
+        font-size: 14px;
+    }
+
+}
+

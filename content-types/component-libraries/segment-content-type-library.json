@@ -1,0 +1,18 @@
+﻿{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "id": "https://raw.githubusercontent.com/zestrax/dynamic-content-samples/Development/content-types/component-libraries/segment-content-type-library.json",
+    "type": "object",
+    "title": "customer segment type schema",
+    "description": "segmentation content type components to build content types",
+    "definitions": {
+        "customer-segment": {
+            "title": "segments",
+            "enum": [
+                "lavish-lifestyle",
+                "mature-money",
+                "city-sophisticates",
+                "price-sensitive"        
+            ]
+        }
+    }
+}

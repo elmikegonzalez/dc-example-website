@@ -74,9 +74,22 @@ window.loryHelpers = {
         $sliders.forEach(function ($slider, i) {
             var infinite = $slider.getAttribute('data-infinite') === 'true';
             var navDots = $slider.getAttribute('data-navigation') === 'true';
+            var sliderLength = $slider.getAttribute('data-sliderlength');
             var sliderSettings = {};
             if (infinite) {
                 sliderSettings.infinite = 1;
+            }
+
+           if (sliderLength > 0){
+                if( sliderLength == 1){
+                    sliderSettings.infinite = 1;
+                }
+                if( sliderLength == 2){
+                    sliderSettings.infinite = 2;
+                }
+                if( sliderLength >= 3){
+                    sliderSettings.infinite = 3;
+                }
             }
 
             var slider = lory($slider, sliderSettings);

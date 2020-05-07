@@ -1,0 +1,76 @@
+﻿{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "id": "https://raw.githubusercontent.com/neilmistryamplience/dc-example-website/willow/content-types/briefs/content-brief-type-library-1.json",
+    "type": "object",
+    "title": "Core type schema",
+    "description": "core content type definitions to for brief specific content types",
+    "definitions": {
+        "content-brief-type": {
+            "title": "Type of content brief",
+            "enum": [
+                "SL",
+                "PHT",
+                "Marquee",
+                "Hero",
+                "Bottom banner 1",
+                "Bottom banner 2",
+                "Bottom banner 3",
+                "Bottom banner 4",
+                "Caveat"
+            ]
+        },
+        "content-brief": {
+            "type": "object",
+            "title": "CONTENT LEVEL BRIEF",
+            "properties": {
+                "type": {
+                    "$ref": "#/definitions/content-brief-type"
+                },
+                "copy": {
+                    "type": "array",
+                    "title": "COPY",
+                    "maxItems": 10,
+                    "minItems": 1,
+                    "items": {
+                        "type": "string",
+                        "title": "Line of copy",
+                        "format": "text"
+                    }
+                },
+                "notes": {
+                    "type": "array",
+                    "title": "NOTES",
+                    "maxItems": 10,
+                    "minItems": 1,
+                    "items": {
+                        "type": "string",
+                        "title": "Note",
+                        "format": "text"
+                    }
+                },
+                "images": {
+                    "type": "array",
+                    "title": "IMAGES",
+                    "maxItems": 5,
+                    "items": {
+                        "$ref": "../component-libraries/image-content-type-library.json#/definitions/descriptive-image"
+                    }
+                },
+                "links": {
+                    "type": "array",
+                    "title": "PAGE LINKS",
+                    "maxItems": 5,
+                    "items": {
+                        "$ref": "../component-libraries/links-content-type-library.json#/definitions/descriptive-link"
+                    }
+                }
+            },
+            "propertyOrder": [
+                "type",
+                "copy",
+                "notes",
+                "images"
+            ]
+        }
+    }
+}

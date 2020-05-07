@@ -1,46 +1,122 @@
-.amp-ca-card {
-    width: 100%;
-    display: inline-block;
-    vertical-align: top;
+//.amp-ca-card {
+//    width: 100%;
+//    display: inline-block;
+//    vertical-align: top;
+//
+//    * {
+//        margin: 0;
+//        padding: 0;
+//    }
+//
+//    .amp-ca-image img {
+//        //max-height: 350px;
+//    }
+//
+//    .amp-ca-card-text-wrap {
+//        margin-top: 10px;
+//        text-align: center;
+//    }
+//
+//    .amp-ca-card-name {
+//        font-size: 21px;
+//        color: #000;
+//        margin-bottom: 5px;
+//    }
+//    .amp-ca-card-description {
+//        color: #8F8F8F;
+//        display: inline-block;
+//        margin-bottom: 5px;
+//        font-size: 16px;
+//    }
+//    .amp-ca-card-link-holder {
+//        margin-bottom: 5px;
+//
+//        .amp-ca-banner-button {
+//            font-size: 18px;
+//            margin-top: 15px;
+//            display: inline-block;
+//            //width: 100%;
+//            border: solid 2px white;
+//            padding: 8px 16px;
+//            background: #000;
+//            color:#fff;
+//            text-decoration: none;
+//            //font-weight: bold;
+//            box-sizing: border-box;
+//            min-width: 120px;
+//            &.black {
+//                background: #000;
+//                color: #fff;
+//                border: solid 2px white;
+//            }
+//            &.black:hover {
+//                background: #fff;
+//                color: #000;
+//                border: solid 2px black;
+//            }
+//            &.white {
+//                background: #fff;
+//                color: #000;
+//                border: solid 2px black;
+//            }
+//            &.white:hover {
+//                background: #000;
+//                color: #fff;
+//                border: solid 2px white;
+//            }
+//        }
+//    }
+//    .amp-ca-card-link {
+//        color: #8F8F8F;
+//        text-decoration: none;
+//        font-size: 16px;
+//        font-weight: bold;
+//        white-space: nowrap;
+//        &:hover {
+//            text-decoration: underline;
+//            cursor: pointer;
+//            color: #b01c4d;
+//        }
+//    }
+//}
 
-    * {
-        margin: 0;
-        padding: 0;
-    }
 
-    .amp-ca-image img {
-        //max-height: 350px;
+.amp-dc-card {
+  .amp-dc-card-name {
+    @include header();
+    font-size: 32px;
+  }
+  .amp-dc-card-text-wrap {
+    padding: 15px;
+    .amp-dc-card-link {
+      @include button();
     }
-
-    .amp-ca-card-text-wrap {
-        margin-top: 10px;
-        text-align: center;
+    .amp-dc-card-description {
+      display: block;
     }
-
-    .amp-ca-card-name {
-        font-size: 21px;
-        color: #000;
-        margin-bottom: 5px;
-    }
-    .amp-ca-card-description {
-        color: #8F8F8F;
-        display: inline-block;
-        margin-bottom: 5px;
-        font-size: 16px;
-    }
-    .amp-ca-card-link-holder {
-        margin-bottom: 5px;
-    }
-    .amp-ca-card-link {
-        color: #8F8F8F;
-        text-decoration: none;
-        font-size: 16px;
-        font-weight: bold;
-        white-space: nowrap;
-        &:hover {
-            text-decoration: underline;
-            cursor: pointer;
-            color: #b01c4d;
+    &.amp-dc-card-no-image {
+      margin:0;
+      width: 100%;
+      height: calc(100% - 15px);
+      padding: 50% 80px;
+      text-align: center !important; //sorry, was just quicker.
+      .amp-dc-card-name {
+        &:before{
+          content: "\201C";
+          font-family: Georgia, serif;
+          font-size: 250px;
+          display: block;
+          padding-bottom: 60px;
         }
+        font-size:48px;
+        padding: 60px 0;
+      }
+      .amp-dc-card-description {
+        font-size:22px;
+      }
     }
+  }
+  a.amp-dc-card-wrap:hover .amp-dc-card-link {
+    text-decoration: none;
+  }
 }

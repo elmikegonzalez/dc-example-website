@@ -1,6 +1,6 @@
 {
   "$schema": "http://bigcontent.io/cms/schema/v1/schema#",
-  "id": "https://raw.githubusercontent.com/neilmistryamplience/dc-example-website/master/content-types/slider.json",
+  "id": "https://raw.githubusercontent.com/neilmistryamplience/dc-example-website/willow/content-types/slider.json",
   "title": "Slider",
   "description": "Contains Images, Videos & Banners to produce a slider / carousel",
   "allOf": [
@@ -24,9 +24,9 @@
               "contentType": {
                 "title": "",
                 "enum": [
-                  "https://raw.githubusercontent.com/neilmistryamplience/dc-example-website/master/content-types/banner.json",
-                  "https://raw.githubusercontent.com/neilmistryamplience/dc-example-website/master/content-types/image.json",
-                  "https://raw.githubusercontent.com/neilmistryamplience/dc-example-website/master/content-types/video.json"
+                  "https://raw.githubusercontent.com/neilmistryamplience/dc-example-website/willow/content-types/banner.json",
+                  "https://raw.githubusercontent.com/neilmistryamplience/dc-example-website/willow/content-types/image.json",
+                  "https://raw.githubusercontent.com/neilmistryamplience/dc-example-website/willow/content-types/video.json"
                 ]
               }
             }

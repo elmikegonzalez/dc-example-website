@@ -1,0 +1,36 @@
+﻿{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "title": "Core type schema for alignment",
+    "description":"core content type components to build content types",
+    "id": "https://raw.githubusercontent.com/zestrax/dynamic-content-samples/Development/content-types/component-libraries/youtube-content-type-library.json",
+    "definitions": {
+        "youtube-basic": {
+            "type": "object",
+            "title": "YOUTUBE VIDEO",
+            "properties": {
+                "link": {
+                    "title": "YouTube Link",
+                    "type": "string",
+                    "description": "The YouTube link to the video",
+                    "format": "uri"
+                },
+                "title": {
+                    "title": "Video Title",
+                    "type": "string",
+                    "description": "Short Description of the video",
+                    "format": "text"
+                },
+                "thumbnail": {
+                    "title": "Thumbnail",
+                    "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+                }
+            },
+            "propertyOrder": [
+                "link",
+                "title",
+                "thumbnail"
+            ]
+        }
+    }
+}

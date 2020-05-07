@@ -2,7 +2,7 @@
     <div class="amp-ca-promo-list">
         <div class="amp-ca-promo-list-wrap">
             {{#each promos}}
-                <div class="amp-ca-promo-block amp-ca-{{@index}}">
+                <div class="amp-ca-promo-block amp-ca-{{@index}} amp-ca-numpromos-{{../promos.length}}">
                     {{> promo this index=@index }} 
                 </div>
             {{/each}}

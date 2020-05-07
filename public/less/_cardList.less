@@ -2,6 +2,25 @@
     min-width: 0;
 }
 
+.amp-ca-slider-slides {
+    font-size: 0;
+    .amp-ca-slider-slide-card{
+        &.amp-length-2{
+            @media screen and (min-width: 321px) {
+                width: 50% !important;
+            }
+        }
+        &.amp-length-3{
+            @media screen and (min-width: 321px) {
+                width: 50% !important;
+            }
+            @media screen and (min-width: 769px) {
+                width: 33.3% !important;
+            }
+        }
+    }
+}
+
 .amp-ca-card-title {
     font-size: 2em;
     text-align: center;

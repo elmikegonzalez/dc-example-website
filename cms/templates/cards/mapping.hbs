@@ -1,0 +1,135 @@
+{{!-- Image based components --}}
+
+{{#if (test this.[@type] (toRegex ".*/image.json")) }}
+    {{> cards/basic-image image }}
+{{/if}}
+
+{{#if (test this.[@type] (toRegex ".*/image-block.json")) }}
+    {{> cards/basic-image image }}
+{{/if}}
+
+{{#if (test this.[@type] (toRegex ".*/hero-block.json")) }}
+    {{> cards/basic-image panelContent.image }}
+{{/if}}
+
+{{#if (test this.[@type] (toRegex ".*/split-block.json")) }}
+    {{> cards/basic-image blockContent.image }}
+{{/if}}
+
+{{#if (test this.[@type] (toRegex ".*/card.json")) }}
+    {{#if image}}
+        {{> cards/basic-image image.image }}
+    {{else}}
+        {{> cards/basic-text cardName }}
+    {{/if}}
+{{/if}}
+
+{{#if (test this.[@type] (toRegex ".*/promo.json")) }}
+    {{> cards/basic-image icon }}
+{{/if}}
+
+{{#if (test this.[@type] (toRegex ".*/product.json")) }}
+    {{> cards/basic-image image }}
+{{/if}}
+
+{{!-- Text based components --}}
+
+{{#if (test this.[@type] (toRegex ".*/text-block")) }}
+    {{> cards/basic-text paragraphs }}
+{{/if}}
+
+
+{{!-- Components with custom card logic --}}
+{{#if (test this.[@type] (toRegex ".*/text.json")) }}
+    {{> cards/markdown-text }}
+{{/if}}
+
+{{#if (test this.[@type] (toRegex ".*/banner.json")) }}
+    {{> cards/banner }}
+{{/if}}
+
+{{!-- Video based components --}}
+
+{{#if (test this.[@type] (toRegex ".*/video.json")) }}
+    {{> cards/basic-video video }}
+{{/if}}
+
+{{!-- Containers --}}
+
+
+{{#if (test this.[@type] (toRegex ".*/container.json")) }}
+    {{> cards/mapping contentTypes }}
+{{/if}}
+
+{{#if (test this.[@type] (toRegex ".*/container-slot.json")) }}
+    {{> cards/mapping content }}
+{{/if}}
+
+{{#if (test this.[@type] (toRegex ".*/flexible-slot.json")) }}
+    {{> cards/mapping contentTypes }}
+{{/if}}
+
+{{#if (test this.[@type] (toRegex ".*/banner-slot.json")) }}
+    {{> cards/mapping content }}
+{{/if}}
+
+{{#if (test this.[@type] (toRegex ".*/splitBlock.json")) }}
+    {{> cards/mapping content }}
+{{/if}}
+
+{{#if (test this.[@type] (toRegex ".*/page.json")) }}
+    {{> cards/mapping contentSlots }}
+{{/if}}
+
+{{#if (test this.[@type] (toRegex ".*/carousel.json")) }}
+    {{> cards/mapping slides }}
+{{/if}}
+
+{{#if (test this.[@type] (toRegex ".*/grid.json")) }}
+    {{> cards/mapping gridContent }}
+{{/if}}
+
+{{#if (test this.[@type] (toRegex ".*/stack.json")) }}
+    {{> cards/mapping content }}
+{{/if}}
+
+{{#if (test this.[@type] (toRegex ".*/slider.json")) }}
+    {{> cards/mapping slides }}
+{{/if}}
+
+{{#if (test this.[@type] (toRegex ".*/cardList.json")) }}
+    {{> cards/mapping cards }}
+{{/if}}
+
+{{#if (test this.[@type] (toRegex ".*/promoList.json")) }}
+    {{> cards/mapping promos }}
+{{/if}}
+
+{{#if (test this.[@type] (toRegex ".*/blog.json")) }}
+    {{> cards/mapping contentTypes }}
+{{/if}}
+
+{{#if (test this.[@type] (toRegex ".*/blogList.json")) }}
+    {{> cards/mapping blogs }}
+{{/if}}
+
+{{#if (isArray this) }}
+    {{#each this}}
+        {{> cards/mapping this }}
+    {{/each}}
+{{/if}}
+
+
+
+{{!-- 
+
+
+{{#if (test this.[@type] (toRegex ".*/externalBlock.json")) }}
+    {{> externalBlock }}
+{{/if}}
+
+
+{{#if (test this.[@type] (toRegex ".*/ugc.json")) }}
+    {{> ugc }}
+{{/if}}
+ --}}

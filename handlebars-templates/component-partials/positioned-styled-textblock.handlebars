@@ -1,0 +1,8 @@
+<div class="{{this.classes}} text-block" {{#with block-position}}style="position:absolute; top:{{this.top}}%;left:{{this.left}}%"{{/with}}>
+    {{#each text-items}}
+        {{> styled-text}}
+    {{/each}}
+    {{#if this.callToAction.link}}
+        <a class="{{this.callToAction.classes}}" href="{{this.callToAction.link}}">{{this.callToAction.text}}</a>
+    {{/if}}
+</div>

@@ -1,6 +1,6 @@
 {
   "$schema": "http://bigcontent.io/cms/schema/v1/schema#",
-  "id": "https://raw.githubusercontent.com/neilmistryamplience/dc-example-website/master/content-types/promoList.json",
+  "id": "https://raw.githubusercontent.com/neilmistryamplience/dc-example-website/willow/content-types/promoList.json",
   "title": "Promo List",
   "description": "A list of promotions to display",
   "allOf": [
@@ -24,7 +24,7 @@
               "contentType": {
                 "title": "",
                 "enum": [
-                  "https://raw.githubusercontent.com/neilmistryamplience/dc-example-website/master/content-types/promo.json"
+                  "https://raw.githubusercontent.com/neilmistryamplience/dc-example-website/willow/content-types/promo.json"
                 ]
               }
             }
@@ -32,7 +32,7 @@
         ]
       },
       "minItems": 1,
-      "maxItems": 3
+      "maxItems": 4
     }
   }
 }

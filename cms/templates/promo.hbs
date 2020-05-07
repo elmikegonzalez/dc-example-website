@@ -1,11 +1,13 @@
-<div class="amp-ca-promo-wrap">
+<div class="amp-ca-promo-wrap" style="background-color:#{{#if backgroundColor}}{{backgroundColor}}{{else}}FFFFFF{{/if}};">
     <a href="{{link.value}}" title="{{link.label}}">
+    	{{#with icon}}
         <picture class="amp-ca-promo-ico">
-            <img src="//{{icon.defaultHost}}/i/{{icon.endpoint}}/{{icon.name}}?w=40&h=40" srcset="//{{icon.defaultHost}}/i/{{icon.endpoint}}/{{icon.name}}?w=40&h=40 1x, //{{icon.defaultHost}}/i/{{icon.endpoint}}/{{icon.name}}?w=80&h=80 2x" class="amp-ca-image-pic" />
+            <img src="//{{defaultHost}}/i/{{endpoint}}/{{name}}?w=40&h=40" srcset="//{{defaultHost}}/i/{{endpoint}}/{{name}}?w=40&h=40 1x, //{{defaultHost}}/i/{{endpoint}}/{{name}}?w=80&h=80 2x" class="amp-ca-image-pic" />
         </picture>
+        {{/with}}
         <div class="amp-ca-promo-text-wrap">
-            <div class="amp-ca-promo-head-text">{{topLine}}</div>
-            <div class="amp-ca-promo-content-text">{{bottomLine}}</div>
+            <div class="amp-ca-promo-head-text" style="color:#{{#if toplineColor}}{{toplineColor}}{{else}}000000{{/if}};">{{topLine}}</div>
+            <div class="amp-ca-promo-content-text" style="color:#{{#if bottomlineColor}}{{bottomlineColor}}{{else}}9B9B9B{{/if}};">{{bottomLine}}</div>
         </div>
     </a>
 </div>

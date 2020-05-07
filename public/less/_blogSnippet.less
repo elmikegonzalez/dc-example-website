@@ -1,4 +1,6 @@
 .amp-ca-snippet {
+    position:relative;
+
     .amp-ca-image {
         position: relative;
         overflow: hidden;
@@ -10,16 +12,111 @@
             user-select: none;
         }
     }
+
+    .amp-ca-category-container{
+        position: absolute;
+        top:0px;
+        width:100%;
+        text-align:center;
+        .amp-ca-category{
+            padding:0;
+            margin:0;
+            //float: left;
+            margin:0;
+            background-color: #FFFFFF;
+            display:inline-block;
+            padding: 2px 10px 0px 10px;
+        }
+    }
+
+    .amp-ca-keywords-container{
+        position: relative;
+        top:0px;
+        width:100%;
+        text-align:center;
+        padding-bottom: 2em;
+        .amp-ca-keyword{
+            padding:0;
+            margin:0;
+            //float: left;
+            margin:0;
+            background-color: #000000;
+            color:#ffffff;
+            display:inline-block;
+            padding: 2px 10px 0px 10px;
+        }
+    }
+
+
     .amp-ca-title {
-        text-transform: uppercase;
+        position: relative;
+        //text-transform: uppercase;
+        font-weight:800;
         font-size: 2em;
-        margin: 20px;
+        margin-left:5%;
+        margin-right:5%;
+        margin-top:-0.6em;
+        margin-bottom:-0.6em;
+        text-align: center;
+        background-color:rgba(255, 255, 255, 1);
     }
     .amp-ca-description {
-        padding: 20px;
+        font-size: 1.2em;
+        text-align: center;
+        padding: 8px;
     }
-    .amp-ca-link {
-        margin: 20px;
-        font-weight: bold;
+
+    .amp-ca-blogdate{
+        padding-top: 20px;
+        text-align: center;
+        font-size: 0.8em;
+    }
+
+    .amp-ca-link-holder{
+        width: 100%;
+        text-align: center;
+        padding-bottom:20px;
+    }
+
+    .amp-ca-banner-button {
+        font-size: 18px;
+        margin-top: 15px;
+        display: inline-block;
+        //width: 100%;
+        border: solid 2px white;
+        padding: 8px 16px;
+        background: #000;
+        color:#fff;
+        text-decoration: none;
+        //font-weight: bold;
+        box-sizing: border-box;
+        min-width: 120px;
+        margin:0 auto;
+        &.black {
+            background: #000;
+            color: #fff;
+            border: solid 2px white;
+        }
+        &.black:hover {
+            background: #fff;
+            color: #000;
+            border: solid 2px black;
+        }
+        &.white {
+            background: #fff;
+            color: #000;
+            border: solid 2px black;
+        }
+        &.white:hover {
+            background: #000;
+            color: #fff;
+            border: solid 2px white;
+        }
+    }
+
+    .amp-ca-author{
+        text-align: center;
+        font-size: 1.8em;
+        font-weight: 200;
     }
 }

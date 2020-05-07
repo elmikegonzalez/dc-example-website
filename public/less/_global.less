@@ -16,6 +16,8 @@ html{
 
 body{
   background: @white;
+  height:100%;
+  overflow:auto;
 
   &.fixedLayout{
     overflow-y:hidden !important;
@@ -192,6 +194,7 @@ section{
     button{
       text-transform: uppercase;
     }
+
   }
 }
 
@@ -362,3 +365,83 @@ section{
   color: #fff;
   background: #000;
 }
+
+footer{
+  clear:both;
+}
+.amp-modal-grey-out{
+  z-index: 100 !important;
+}
+
+.amp-product-url{
+
+  button, input[type="submit"], input[type="reset"] {
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+  }
+
+  text-align: center;
+  font-size: 18px;
+  margin-top: 15px;
+  display: inline-block;
+  //width: 100%;
+  border: solid 2px white;
+  padding: 8px 16px;
+  background: #000;
+  color:#fff;
+  text-decoration: none;
+  //font-weight: bold;
+  box-sizing: border-box;
+  min-width: 120px;
+  background: #000;
+  color: #fff;
+  border: solid 2px white;
+
+
+
+  &:hover {
+      background: #fff;
+      color: #000;
+      border: solid 2px black;
+  }
+}
+
+.amp-ca-banner-button {
+        font-size: 18px;
+        margin-top: 15px;
+        display: inline-block;
+        //width: 100%;
+        border: solid 2px white;
+        padding: 8px 16px;
+        background: #000;
+        color:#fff;
+        text-decoration: none;
+        //font-weight: bold;
+        box-sizing: border-box;
+        min-width: 120px;
+        &.black {
+            background: #000;
+            color: #fff;
+            border: solid 2px white;
+        }
+        &.black:hover {
+            background: #fff;
+            color: #000;
+            border: solid 2px black;
+        }
+        &.white {
+            background: #fff;
+            color: #000;
+            border: solid 2px black;
+        }
+        &.white:hover {
+            background: #000;
+            color: #fff;
+            border: solid 2px white;
+        }
+    }

@@ -1,0 +1,80 @@
+{
+  "$schema": "http://bigcontent.io/cms/schema/v1/schema#",
+  "id": "https://raw.githubusercontent.com/neilmistryamplience/dc-example-website/willow/content-types/ugc.json",
+  "title": "UGC",
+  "description": "A reusable content type UGC content",
+  "allOf": [
+    {
+      "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content"
+    }
+  ],
+  "type": "object",
+  "properties": {
+    "stream": {
+      "type": "string",
+      "title": "Stream",
+      "description": "The name of the UGC Stream to load",
+      "validation": "Please enter less than 255 characters",
+      "minLength": 0,
+      "maxLength": 255
+    },
+    "hashtag": {
+      "type": "string",
+      "title": "Hashtag",
+      "description": "The hashtag used for this content",
+      "validation": "Please enter less than 255 characters",
+      "minLength": 0,
+      "maxLength": 255
+    },
+    "clientName": {
+      "type": "string",
+      "title": "Client Name",
+      "description": "The client name",
+      "validation": "Please enter less than 255 characters",
+      "minLength": 0,
+      "maxLength": 255
+    },
+    "displayType": {
+      "type": "string",
+      "title": "Display type",
+      "description": "The display type for this UGC component",
+      "enum": [
+        "media-wall",
+        "carousel"
+      ]
+    },
+    "total": {
+      "title": "Number of posts to display at one time",
+      "description": "A value between 1 and 10. Default is 5",
+      "type": "number",
+      "minimum": 1,
+      "maximum": 10
+    },
+    "header": {
+      "type": "string",
+      "title": "Header",
+      "description": "The header for this UGC content",
+      "validation": "Please enter less than 255 characters",
+      "minLength": 0,
+      "maxLength": 255
+    },
+    "description": {
+      "type": "string",
+      "title": "Description",
+      "description": "The description for this UGC content",
+      "validation": "Please enter less than 255 characters",
+      "minLength": 0,
+      "maxLength": 255
+    }
+  },
+  "propertyOrder": [
+    "header",
+    "description",
+    "stream",
+    "type",
+    "hashtag",
+    "clientName",
+    "type",
+    "total"
+  ]
+}

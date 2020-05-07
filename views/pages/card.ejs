@@ -1,3 +1,167 @@
-<%- include('../components/plain-header.ejs', {}); %>
-    <%- content %>
-<%- include('../components/plain-footer.ejs', {}); %>
+<html style="background-color: rgb(255, 255, 255);" class="">
+    <head>
+        <meta charset="utf8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+        <title>ANYA FINN</title>
+
+        <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+        <style>
+            body {
+                font-family: Roboto Condensed, sans-serif;
+                font-size: 14px;
+                line-height: 1.42857143;
+                color: #333333;
+                background-color: #fff;
+            }
+
+            .dc-card:not(:first-of-type) {
+                display: none;
+            }
+            .dc-card {
+                position: absolute;
+                left: 0;
+                right: 0;
+                top: 0;
+                bottom: 0;
+                overflow: hidden;
+            }
+            .dc-card-image img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+            .dc-card-image-overlay {
+                position: absolute;
+                left: 0;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                object-fit: scale-down !important;
+            }
+            .dc-card-text {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-family: Roboto,sans-serif;
+                color: #17202b;
+                font-size: 24px;
+            }
+            .dc-card-markdown-text {
+                display: block;
+                font-size: 14px;
+            }
+
+            .leankit-card-status {
+                position:absolute;
+                padding:5px;
+                bottom:0;
+                left:0;
+                width:100%;
+                color:#ffffff;
+                border-radius: 5%;
+            }
+
+            .leankit-card-status-backlog {
+                background-color: #090970;
+            }
+
+            .leankit-card-status-complete {
+                background-color: green;
+            }
+            
+            .leankit-card-status-in-progress {
+                background-color: dodgerblue;
+            }
+            
+            .leankit-card-status-blocked {
+                background-color: darkred;
+            }
+            
+            .leankit-card-status-not-found {
+                background-color: darkslategrey;
+                display: none;
+            }
+        </style>
+
+    </head>
+
+    <body>
+        <%- content %>
+
+        <div class="leankit-card">
+            <div class="leankit-card-status">
+            </div>
+        </div>
+
+        <script language="javascript">
+            (function() {
+                //TODO: This should not be hard coded
+                const API_URL = '//willow-demo-leankit.dev.adis.ws';
+                const BOARD_ID = '680372499';
+
+                function LeankitCard(card) {
+
+                    this.getStatus = function(contentId) {
+                        return fetch(API_URL + `/lk/${BOARD_ID}/card/${contentId}`)
+                            .then(r => r.json())
+                            .then(response => {
+                                if(response.cards && response.cards.length > 0) {
+                                    return response.cards[0];
+                                }else{
+                                    return null;
+                                }
+                            });
+                    }
+
+                    this.displayStatus = function(contentId) {
+                        const statusView = card.querySelector('.leankit-card-status');
+
+                        this.getStatus(contentId)
+                            .then(function(cardMetaData) {
+                                let status = 'not-found';
+                                let statusText = 'No Kanban Card';
+
+                                if(cardMetaData) {
+                                    if(cardMetaData.actualStart) {
+                                        status = 'in-progress';
+                                        statusText = (cardMetaData.lane && cardMetaData.lane.title) ? cardMetaData.lane.title : 'In Progress';
+                                    }else{
+                                        status = 'backlog';
+                                        statusText = 'In Backlog';
+                                    }
+                                    if(cardMetaData.actualFinish) {
+                                        status = 'complete';
+                                        statusText = 'Completed';
+                                    }
+                                    if(cardMetaData.blockedStatus && cardMetaData.blockedStatus.isBlocked) {
+                                        status = 'blocked';
+                                        statusText = 'Blocked';
+                                    }
+                                }
+                                statusView.classList.add('leankit-card-status-' + status);
+                                statusView.innerText = statusText;
+                            });
+                    }
+                }
+
+                this.displayStatus = function(contentId, view) {
+                    const card = new LeankitCard(document.querySelector(view));
+                    card.displayStatus(contentId);
+                }
+
+            }).apply(window.leankitCard = window.leankitCard || {});
+
+
+            window.leankitCard.displayStatus('<%- contentId %>', '.leankit-card');
+            
+            //lazy load first card images
+            var firstCard = document.querySelector('.dc-card');
+            [].slice.call(firstCard.querySelectorAll('img')).map(image => {
+                image.setAttribute('src', image.getAttribute('data-src'));
+            });
+        </script>
+
+    </body>
+</html>

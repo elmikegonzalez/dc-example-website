@@ -1,0 +1,96 @@
+﻿{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "title": "Core type schema for links",
+    "description": "Core content type components to build content types",
+    "id": "https://raw.githubusercontent.com/zestrax/dynamic-content-samples/Development/content-types/component-libraries/links-content-type-library.json",
+    "definitions": {
+        "relative-link": {
+            "type": "object",
+            "title": "URL LINK",
+            "properties": {
+                "text": {
+                    "type": "string",
+                    "maxLength": 155,
+                    "title": "Link Title",
+                    "format": "text"
+                },
+                "classes": {
+                    "type": "string",
+                    "title": "Text styling options",
+                    "description": "Add CSS classes with a space between each such as: headline-medium",
+                    "format": "text"
+                },
+                "link": {
+                    "type": "string",
+                    "title": "Url",
+                    "description": "a relative url to link (/_/_._) ",
+                    "pattern": "(http://|/)[^ :]+"
+                }
+            },
+            "propertyOrder": [
+                "text",
+                "link",
+                "classes"
+            ]
+        },
+        "fixed-link": {
+            "type": "object",
+            "title": "URL LINK",
+            "properties": {
+                "text": {
+                    "type": "string",
+                    "maxLength": 155,
+                    "title": "Link Title",
+                    "format": "text"
+                },
+                "classes": {
+                    "type": "string",
+                    "title": "Text styling options",
+                    "description": "Add CSS classes with a space between each such as: headline-medium",
+                    "format": "text"
+                },
+                "url": {
+                    "type": "string",
+                    "title": "Url",
+                    "description": "an absolute fully qualified url",
+                    "format": "uri"
+                }
+            },
+            "propertyOrder": [
+                "text",
+                "url",
+                "classes"
+            ]
+        },
+        "descriptive-link": {
+            "type": "object",
+            "title": "URL LINK",
+            "properties": {
+                "link-descriptiont": {
+                    "type": "string",
+                    "title": "Text describing the link destination",
+                    "description": "provide a textual description of the link destination",
+                    "format": "text"
+                },
+                "link-text": {
+                    "type": "string",
+                    "maxLength": 155,
+                    "title": "text displayed as part of the link",
+                    "format": "text"
+                },
+                "url": {
+                    "type": "string",
+                    "title": "Url",
+                    "description": "an absolute fully qualified url",
+                    "format": "uri"
+                }
+            },
+            "propertyOrder": [
+                "link-descriptiont",
+                "text",
+                "url"
+            ]
+        }
+    }
+}

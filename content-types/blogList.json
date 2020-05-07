@@ -1,6 +1,6 @@
 {
   "$schema": "http://bigcontent.io/cms/schema/v1/schema#",
-  "id": "https://raw.githubusercontent.com/neilmistryamplience/dc-example-website/master/content-types/blogList.json",
+  "id": "https://raw.githubusercontent.com/neilmistryamplience/dc-example-website/willow/content-types/blogList.json",
   "title": "Blog List",
   "description": "A list of blogs",
   "allOf": [
@@ -24,7 +24,7 @@
               "contentType": {
                 "title": "",
                 "enum": [
-                  "https://raw.githubusercontent.com/neilmistryamplience/dc-example-website/master/content-types/blog.json"
+                  "https://raw.githubusercontent.com/neilmistryamplience/dc-example-website/willow/content-types/blog.json"
                 ]
               }
             }

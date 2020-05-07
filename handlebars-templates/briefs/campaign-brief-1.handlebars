@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Brief - {{this.reference}}</title>
+</head>
+<style>
+
+    @import url(https://fonts.googleapis.com/css?family=Roboto:100,100italic,200,300,300italic,400,400italic,500,500italic,700,700italic,900,900italic&subset=latin,latin-ext,cyrillic,cyrillic-ext,greek-ext,greek,vietnamese);\
+
+    body {
+        font-family: 'Roboto', sans-serif;
+        background-color: #0a0a0a;
+        font-style: normal;
+        text-align: center;
+        font-size: 14px;
+        font-weight: 100;
+
+    }
+    .doc{
+        max-width:1280px;
+        display:inline-block;
+        width:80%;
+        background-color: #fff;
+        font-family: 'Roboto', sans-serif;
+        font-style: normal;
+        text-align: center;
+        font-size: 12px;
+        font-weight: 100;
+
+    }
+    img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .brief-header {
+        padding: 40px 0 40px 0;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 300;
+        text-align: center;
+        font-size: 55px;
+    }
+    h2 {
+        text-align: center;
+    }
+    #main {
+        margin: 0px 25px 0px 25px;
+    }
+    .edition-block{
+        margin: 0px 0px 0px 0px;
+
+    }
+    .edition-title{
+        font-family: 'Roboto', sans-serif;
+        font-weight: bold;
+        font-size: 28px;
+        margin: 10px 0px 8px 0px;
+        text-align: center;
+    }
+    .copy-brief{
+        border: #dddddd solid 1px;
+    }
+    .copy-block{
+        font-family: 'Roboto', sans-serif;
+        font-weight: 300;
+        font-size: 14px;
+        background-color: #ffffff;
+        width:49.5%;
+        padding: 0 0 0 0;
+    }
+    .note-block{
+        background-color: #edece6;
+        width:49.5%;
+        padding: 0 0 0 5px;
+        color:#8f7743;
+    }
+    .copy-block-text{
+        font-size: 16px;
+        margin: 7px 0px 7px 10px;
+        text-align: left;
+    }
+    .content-briefs{
+        width:100%;
+        font-size: 18px;
+        text-align: left;
+    }
+    .content-brief-header{
+        font-weight: bold;
+        font-size: 18px;
+        padding:5px 5px 5px 10px;
+        background-color: #eee;
+    }
+    .image-brief{
+        width:300px;
+        margin: 5px 5px 5px 5px;
+    }
+    .image-block{
+        width:310px;
+        margin: 5px 5px 5px 5px;
+        padding: 5px 5px 5px 5px;
+        text-align: center;
+        border: #0c3d5d solid 1px;
+
+    }
+    .image-text{
+        margin: 0 0 0 0 ;
+        padding: 0 0 0 0 ;
+        text-align: center;
+        font-weight: normal !important;
+        background-color: #ffffff !important;
+    }
+    .link-text{
+        margin: 0 0 0 0     !important;
+        padding: 0 0 0 10px    !important;
+        text-align: left    !important;
+        font-weight: normal !important;
+        background-color: #ffffff !important;
+    }
+    .clear {
+        clear: both;
+    }
+    .images-section{
+        width:100%;
+    }
+    .images-section p {
+        margin: 0 0 0 0;
+        font-weight: bold;
+        font-size: 18px;
+        padding:5px 5px 5px 10px;
+        display:block;
+        height:20px;
+
+    }
+    @media only screen and (max-width: 70.5em) {
+        .note-block{
+            width:100%;
+        }
+        .copy-block{
+            width:100%;
+        }
+        .doc{
+
+            display:inline-block;
+            width:100%;
+            background-color: #fff;
+        }
+        #main {
+            margin: 0px 0px 0px 0px;
+        }
+    }
+
+</style>
+<body style="width:100%">
+<div style="background:#666; text-align: center;">
+<div class="doc">
+    <div style="text-align: center;width:100%;padding: 25px 10px 25px 10px;border-bottom: #0a0a0a solid 1px;">
+        <img style="height:60px;display:inline-block;alignment: center" class="center-image" src="https://jwdemo.a.bigcontent.io/v1/static/AnyaFinn-ContentBrief-logo">
+    </div>
+    <div class="brief-header" style="width:100%">{{this.reference}} Brief</div>
+    <div id="main">
+        <div style="width:100%"  id="campaign-details">
+            <div class="edition-briefs">
+                {{#each edition-briefs}}
+                    {{> edition-briefs}}
+                {{/each}}
+                <br class="clear" /></div>
+        </div>
+    </div>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,104 @@
+﻿{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "id": "https://raw.githubusercontent.com/zestrax/dynamic-content-samples/Development/content-types/component-libraries/text-content-type-library.json",
+    "type": "object",
+    "title": "Core type schema",
+    "description": "core content type components to build content types",
+    "definitions": {
+        "aligned-text": {
+            "type": "object",
+            "title": "LINE OF TEXT",
+            "properties": {
+                "text": {
+                    "type": "string",
+                    "title": " Line of text",
+                    "description": "Text to be displayed.",
+                    "format": "text"
+                },
+                "alignment": {
+                    "$ref": "./alignment-content-type-library.json#/definitions/h-align"
+                }
+            }
+        },
+        "aligned-text-block": {
+            "type": "object",
+            "title": "TEXT BLOCK",
+            "properties": {
+                "block-alignment": {
+                    "$ref": "./alignment-content-type-library.json#/definitions/alignment"
+                },
+                "block-color": {
+                    "$ref": "./color-content-type-library.json#/definitions/web-color"
+                },
+                "text-color": {
+                    "$ref": "./color-content-type-library.json#/definitions/web-color"
+                },
+                "block-transparency": {
+                    "$ref": "./opacity-content-type-library.json#/definitions/transparency-list"
+                },
+                "text-items": {
+                    "type": "array",
+                    "title": "TEXT LINE",
+                    "maxItems": 5,
+                    "minItems": 1,
+                    "items": {
+                        "$ref": "#/definitions/aligned-text"
+                    }
+                },
+                "callToAction": {
+                    "$ref": "./links-content-type-library.json#/definitions/relative-link"
+                }
+            },
+            "required": [
+                "block-transparency"
+            ],
+            "propertyOrder": [
+                "block-position",
+                "block-transparency",
+                "block-color",
+                "text-color",
+                "text-items"
+            ]
+        },
+        "positioned-text-block": {
+            "type": "object",
+            "title": "TEXT BLOCK",
+            "properties": {
+                "block-position": {
+                    "$ref": "./positioning-content-type-library.json#/definitions/positioning-top-left"
+                },
+                "block-color": {
+                    "$ref": "./color-content-type-library.json#/definitions/web-color"
+                },
+                "text-color": {
+                    "$ref": "./color-content-type-library.json#/definitions/web-color"
+                },
+                "block-transparency": {
+                    "$ref": "./opacity-content-type-library.json#/definitions/transparency-list"
+                },
+                "text-items": {
+                    "type": "array",
+                    "title": "TEXT LINE",
+                    "maxItems": 5,
+                    "minItems": 1,
+                    "items": {
+                        "$ref": "#/definitions/aligned-text"
+                    }
+                },
+                "callToAction": {
+                    "$ref": "./links-content-type-library.json#/definitions/relative-link"
+                }
+            },
+            "required": [
+                "block-transparency"
+            ],
+            "propertyOrder": [
+                "block-position",
+                "block-transparency",
+                "block-color",
+                "text-color",
+                "text-items"
+            ]
+        }
+    }
+}

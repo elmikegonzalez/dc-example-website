@@ -1,0 +1,62 @@
+﻿{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "id": "https://raw.githubusercontent.com/zestrax/dynamic-content-samples/Development/content-types/component-libraries/slot-type-library.json",
+    "type": "object",
+    "title": "Slot type schemas",
+    "description": "slot type components to build slots",
+    "definitions": {
+        "banners": {
+            "type": "object",
+            "title": "CONTENT",
+            "description": "",
+            "properties": {
+                "content-type": {
+                    "allOf": [
+                        {
+                            "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
+                        },
+                        {
+                            "properties": {
+                                "contentType": {
+                                    "title": "",
+                                    "enum": [
+                                        "https://raw.githubusercontent.com/zestrax/dynamic-content-samples/Development/content-types/banners/image-banner-1.json",
+                                        "https://raw.githubusercontent.com/zestrax/dynamic-content-samples/Development/content-types/banners/image-banner-2.json",
+                                        "https://raw.githubusercontent.com/techiedarren/dc-examples/master/content-types/blocks/hero-block.json",
+                                        "https://raw.githubusercontent.com/techiedarren/dc-examples/master/content-types/blocks/image-block.json"           
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                }
+            }
+        },
+        "segmented-banner": {
+            "type": "object",
+            "title": "SEGMENTED CONTENT",
+            "description": "",
+            "properties": {
+                "segment": {
+                    "$ref": "../component-libraries/segment-content-type-library.json#/definitions/customer-segment"
+                },
+                "content": {
+                    "$ref": "#/definitions/banners"
+                }
+            }
+        },
+        "localized-banner": {
+            "type": "object",
+            "title": "LOCALIZED CONTENT",
+            "description": "",
+            "properties": {
+                "language": {
+                    "$ref": "../component-libraries/locale-content-type-library.json#/definitions/language"
+                },
+                "content": {
+                    "$ref": "#/definitions/banners"
+                }
+            }
+        }
+    }
+}

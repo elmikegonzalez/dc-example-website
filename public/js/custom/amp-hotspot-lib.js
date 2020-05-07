@@ -57,7 +57,7 @@ drawAmpImageMeta = function() {
 	                                p.setAttribute("alt", hotspot.target);
 	                                p.setAttribute("href", hotspot.target);
 	                                // add to node
-	                                context.appendChild(p);
+	                                this.appendChild(p);
 	                            }
 	                        }
 	                    }

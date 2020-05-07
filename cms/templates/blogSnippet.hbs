@@ -1,26 +1,38 @@
-<div class="amp-ca-snippet js_ca_snippet">
-    {{#each category}}
-    <div class="amp-ca-category-container">
-        <div class="amp-ca-category">{{this}}</div>
-        <span class="line"></span>
-    </div>
-    {{/each}} {{#if blogdate}}
-    <div class="amp-ca-blogdate">{{blogdate}}</div>
-    {{/if}} 
-     <ul class="post-tags tags">
-        {{#each keywords}}
-        <li class="post-tag tag"><span>{{this}}</span></li>
-        {{/each}}
-    </ul>
+<div class="amp-ca-snippet js_ca_snippet {{viewType}}">
     {{#if image}}
     <div class="amp-ca-image">
-        {{>image image}}
+        {{>image image }}
     </div>
-    {{/if}} {{#if author}}
-    <div class="amp-ca-author">{{author}}</div>
-    {{/if}} {{#if title}}
-    <div class="amp-ca-title">{{title}}</div>
-    {{/if}} {{#if description}}
-    <div class="amp-ca-description">{{description}}</div>
     {{/if}}
+    <div class="amp-ca-category-container">
+        {{#each category}}
+        <div class="amp-ca-category">{{this}}</div>
+        <span class="line"></span> {{/each}}
+    </div>
+    {{#if title}}
+    <div class="amp-ca-title">{{title}}</div>
+    {{/if}}
+    {{#if blogdate}}
+    <div class="amp-ca-blogdate">{{blogdate}}</div>
+    {{/if}} 
+    {{#if description}}
+    <div class="amp-ca-description">{{description}}</div>
+    {{/if}} 
+    {{#compare viewType '!=' 'list'}}
+    {{#if author}}
+    <div class="amp-ca-author">@{{author}}</div>
+    {{/if}}
+
+    <div class="amp-ca-keywords-container">
+        {{#each keywords}}
+        <div class="amp-ca-keyword">{{this}}</div>
+        {{/each}}
+    </div>
+    
+    {{/compare}}
+    {{#compare viewType '==' 'list'}}
+        <div class="amp-ca-link-holder">
+        <a href="/preview/snapshot?content={{remove id 'http://content.cms.amplience.com/'}}" class="amp-ca-banner-button readMore {{#if style}}{{style}}{{else}}black{{/if}}">Read More</a>
+    </div>
+    {{/compare}}
 </div>

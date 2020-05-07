@@ -9,9 +9,7 @@ var markoExpress = require('marko/express');
 
 var contentPages = require('./routes/content-pages');
 var visualization = require('./routes/visualization');
-var dixonsvisualization = require('./routes/dixonsvisualization');
 var card = require('./routes/card');
-var dixonscard = require('./routes/dixonscard');
 //var settings = require('./routes/settings');
 var preview = require('./routes/preview');
 
@@ -28,19 +26,16 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use('/public/css', expressLess(path.join(__dirname,'public','less')));
-app.use(express.static(path.join(__dirname, 'public')));
+app.use('/public/css', expressLess(path.join(__dirname,'public','less'), { cache: process.env.env == 'production' }));
+app.use(express.static(path.join(__dirname, 'public'), { maxAge: (process.env.env == 'production' ? '5m' : '0m' ) }));
 
 
 //app.use('/settings', settings);
 app.use('/preview', preview);
 app.use('/preview/snapshot', visualization);
 app.use('/preview/card', card);
-app.use('/preview/dixons/snapshot', dixonsvisualization);
-app.use('/preview/dixons/card', dixonscard);
 
-
-//app.use('/visualization', visualization);
+app.use('/visualization', visualization);
 app.use('/', contentPages);
 
 // catch 404 and forward to error handler

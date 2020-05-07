@@ -1,0 +1,11 @@
+{{#if (isArray this)}}
+    <div class="dc-card dc-card-text">
+       {{#each this}}
+        <p>{{this}}</p>
+       {{/each}}
+    </div>
+{{else}}
+    <div class="dc-card dc-card-text">
+        <p>{{this}}</p>
+    </div>
+{{/if}}

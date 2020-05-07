@@ -1,0 +1,97 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "id": "https://raw.githubusercontent.com/zestrax/dynamic-content-samples/Development/content-types/component-libraries/text-css-styled-content-type-library.json",
+    "type": "object",
+    "title": "Core type schema",
+    "description": "core content type components to build content types",
+    "definitions": {
+        "css-class-styled-text": {
+            "type": "object",
+            "title": "LINE OF TEXT",
+            "description": "Text line that can be styled using classes and CSS",
+            "additionalProperties": false,
+            "properties": {
+                "text": {
+                    "type": "string",
+                    "title": "Line of text",
+                    "description": "Text to be displayed",
+                    "format": "text"
+                },
+                "classes": {
+                    "type": "string",
+                    "title": "Text styling options",
+                    "description": "Add CSS classes with a space between each such as: headline-medium",
+                    "format": "text"
+                },
+                "alignment": {
+                    "$ref": "./alignment-content-type-library.json#/definitions/h-align"
+                }
+            },
+            "propertyOrder": [
+                "text",
+                "classes",
+                "alignment"
+            ]
+        },
+        "positioned-styled-text-block": {
+            "type": "object",
+            "title": "TEXT BLOCK",
+            "additionalProperties": false,
+            "properties": {
+                "block-position": {
+                    "$ref": "./positioning-content-type-library.json#/definitions/positioning-top-left",
+                    "title": "Text"
+                },
+                "classes": {
+                    "type": "string",
+                    "title": "Block styling options",
+                    "description": "Add CSS classes with a space between each such as: white-transparent-box",
+                    "format": "text"
+                },
+                "text-items": {
+                    "type": "array",
+                    "title": "TEXT",
+                    "items": {
+                        "$ref": "#/definitions/css-class-styled-text"
+                    }
+                },
+                "callToAction": {
+                    "$ref": "./links-content-type-library.json#/definitions/relative-link"
+                }
+            },
+            "propertyOrder": [
+                "block-position",
+                "classes",
+                "text-items"
+            ]
+        },
+        "aligned-styled-text-block": {
+            "type": "object",
+            "title": "TEXT BLOCK",
+            "additionalProperties": false,
+            "properties": {
+                "block-alignment": {
+                    "$ref": "./alignment-content-type-library.json#/definitions/alignment"
+                },
+                "classes": {
+                    "type": "string",
+                    "title": "Block styling options",
+                    "description": "Add CSS classes with a space between each such as: white-transparent-box",
+                    "format": "text"
+                },
+                "text-items": {
+                    "type": "array",
+                    "title": "TEXT LINE",
+                    "items": {
+                        "$ref": "#/definitions/css-class-styled-text"
+                    }
+                }
+            },
+            "propertyOrder": [
+                "block-alignment",
+                "classes",
+                "text-items"
+            ]
+        }
+    }
+}

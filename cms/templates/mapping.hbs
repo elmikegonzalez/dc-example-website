@@ -18,6 +18,14 @@
     {{> image-block }}
 {{/if}}
 
+{{#if (test this.[@type] (toRegex ".*/localizedbanner.json")) }}
+    {{> localizedbanner }}
+{{/if}}
+
+{{#if (test this.[@type] (toRegex ".*/localizedimage.json")) }}
+    {{> localizedimage }}
+{{/if}}
+
 {{#if (test this.[@type] (toRegex ".*/split-block.json")) }}
     {{> split-block }}
 {{/if}}
@@ -90,40 +98,12 @@
     {{> blogList }}
 {{/if}}
 
-{{#if (test this.[@type] (toRegex ".*/dixonsQuicklink.json")) }}
-    {{> dixonsQuicklink }}
+{{#if (test this.[@type] (toRegex ".*/ugc.json")) }}
+    {{> ugc }}
 {{/if}}
 
-{{#if (test this.[@type] (toRegex ".*/dixonsQuicklinkHolder.json")) }}
-    {{> dixonsQuicklinkHolder }}
-{{/if}}
-
-{{#if (test this.[@type] (toRegex ".*/dixonsDealblock.json")) }}
-    {{> dixonsDealblock }}
-{{/if}}
-
-{{#if (test this.[@type] (toRegex ".*/dixonsDealblockHolder.json")) }}
-    {{> dixonsDealblockHolder }}
-{{/if}}
-
-{{#if (test this.[@type] (toRegex ".*/dixonsInspireblock.json")) }}
-    {{> dixonsInspireblock }}
-{{/if}}
-
-{{#if (test this.[@type] (toRegex ".*/dixonsInspireblockHolder.json")) }}
-    {{> dixonsInspireblockHolder }}
-{{/if}}
-
-{{#if (test this.[@type] (toRegex ".*/dixonsBanner.json")) }}
-    {{> dixonsBanner }}
-{{/if}}
-
-{{#if (test this.[@type] (toRegex ".*/dixonsSlide.json")) }}
-    {{> dixonsSlide }}
-{{/if}}
-
-{{#if (test this.[@type] (toRegex ".*/dixonsCarousel.json")) }}
-    {{> dixonsCarousel }}
+{{#if (test this.[@type] (toRegex ".*/product.json")) }}
+    {{> product }}
 {{/if}}
 
 {{#if (test this.[@type] (toRegex ".*/container-slot.json")) }}
@@ -136,8 +116,4 @@
 
 {{#if (test this.[@type] (toRegex ".*/banner-slot.json")) }}
     {{> banner-slot }}
-{{/if}}
-
-{{#if (test this.[@type] (toRegex ".*/dixonsBrandBlock.json")) }}
-    {{> dixonsBrandBlock }}
 {{/if}}

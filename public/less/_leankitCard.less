@@ -1,0 +1,34 @@
+.leankit-card {
+    
+    .leankit-card-status {
+        position:absolute;
+        padding:5px;
+        bottom:0;
+        left:0;
+        width:100%;
+        color:#ffffff;
+        border-radius: 5%;
+
+        &-backlog {
+            background-color: #090970;
+        }
+
+        &-complete {
+            background-color: green;
+        }
+        
+        &-in-progress {
+            background-color: dodgerblue;
+        }
+        
+        &-blocked {
+            background-color: darkred;
+        }
+        
+        &-not-found {
+            background-color: darkslategrey;
+            display: none;
+        }
+    }
+
+}

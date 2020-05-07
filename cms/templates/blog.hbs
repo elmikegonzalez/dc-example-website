@@ -2,10 +2,12 @@
     {{> blogSnippet snippet }}
      {{#if snippet}}
         <div class="amp-ca-blocks-container">
-    {{/if}} 
+    {{/if}}
+        <div class="amp-ca-blog-content"> 
         {{#each contentTypes as |item|}}
             <div class="amp-ca-block-wrap">{{>mapping item }}</div>
         {{/each}} 
+        </div>
         {{#if snippet}}
     </div>
     {{/if}} 

@@ -1,6 +1,6 @@
 {
   "$schema": "http://bigcontent.io/cms/schema/v1/schema#",
-  "id": "https://raw.githubusercontent.com/neilmistryamplience/dc-example-website/master/content-types/splitBlock.json",
+  "id": "https://raw.githubusercontent.com/neilmistryamplience/dc-example-website/willow/content-types/splitBlock.json",
   "title": "Split Block",
   "description": "A reusable content type which allows 2 content types to be used together to create a split block",
   "allOf": [
@@ -24,10 +24,10 @@
               "contentType": {
                 "title": "",
                 "enum": [
-                  "https://raw.githubusercontent.com/neilmistryamplience/dc-example-website/master/content-types/image.json",
-                  "https://raw.githubusercontent.com/neilmistryamplience/dc-example-website/master/content-types/video.json",
-                  "https://raw.githubusercontent.com/neilmistryamplience/dc-example-website/master/content-types/text.json",
-                  "https://raw.githubusercontent.com/neilmistryamplience/dc-example-website/master/content-types/banner.json"
+                  "https://raw.githubusercontent.com/neilmistryamplience/dc-example-website/willow/content-types/image.json",
+                  "https://raw.githubusercontent.com/neilmistryamplience/dc-example-website/willow/content-types/video.json",
+                  "https://raw.githubusercontent.com/neilmistryamplience/dc-example-website/willow/content-types/text.json",
+                  "https://raw.githubusercontent.com/neilmistryamplience/dc-example-website/willow/content-types/banner.json"
                 ]
               }
             }

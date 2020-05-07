@@ -1,0 +1,37 @@
+﻿{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "id": "https://raw.githubusercontent.com/zestrax/dynamic-content-samples/Development/content-types/component-libraries/locale-content-type-library.json",
+    "type": "object",
+    "title": "Core type schema",
+    "description": "core content type components to build content types",
+    "additionalProperties": false,
+    "definitions": {
+        "language": {
+            "title": "language",
+            "enum": [
+                "en",
+                "fr",
+                "de",
+                "es",
+                "it",
+                "zh",
+                "ja",
+                "ru"
+            ]
+        },
+        "country": {
+            "title": "country",
+            "enum": [
+                "us",
+                "gb",
+                "fr",
+                "de",
+                "be",
+                "es",
+                "cn",
+                "jp",
+                "ru"
+            ]
+        }
+    }
+}

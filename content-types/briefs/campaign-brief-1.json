@@ -1,0 +1,34 @@
+﻿{
+    "$schema": "http://bigcontent.io/cms/schema/v1/schema#",
+    "id": "https://raw.githubusercontent.com/neilmistryamplience/dc-example-website/willow/content-types/briefs/campaign-brief-1.json",
+    "type": "object",
+    "title": "Campaign Brief 1",
+    "description": "campaign brief",
+    "properties": {
+        "reference": {
+            "type": "string",
+            "title": "brief reference name",
+            "format": "text"
+        },
+        "edition-briefs": {
+            "type": "array",
+            "title": "edition brief",
+            "description": "the brief for specific editions",
+            "maxItems": 5,
+            "items": {
+                "$ref": "./edition-brief-type-library-1.json#/definitions/edition-brief"
+            }
+        }
+    },
+    "allOf": [
+        {
+            "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content"
+        }
+    ],
+    "propertyOrder": [
+        "reference",
+        "edition-briefs"
+    ]
+}
+
+

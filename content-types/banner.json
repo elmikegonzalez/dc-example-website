@@ -1,6 +1,6 @@
 {
   "$schema": "http://bigcontent.io/cms/schema/v1/schema#",
-  "id": "https://raw.githubusercontent.com/neilmistryamplience/dc-example-website/master/content-types/banner.json",
+  "id": "https://raw.githubusercontent.com/neilmistryamplience/dc-example-website/willow/content-types/banner.json",
   "title": "Banner",
   "description": "A reusable content type for banner content",
   "allOf": [
@@ -10,49 +10,50 @@
   ],
   "type": "object",
   "properties": {
-    "metadata": {
-      "type": "object",
-      "title": "Meta Data",
-      "description": "Meta data related to this content",
-      "allOf": [
-        {
-          "$ref": "https://raw.githubusercontent.com/neilmistryamplience/dc-example-website/master/content-types/metadata.json"
-        }
-      ]
-    },
     "img": {
       "type": "object",
       "title": "Image",
       "description": "The background image for the banner",
       "allOf": [
         {
-          "$ref": "https://raw.githubusercontent.com/neilmistryamplience/dc-example-website/master/content-types/image.json"
+          "$ref": "https://raw.githubusercontent.com/neilmistryamplience/dc-example-website/willow/content-types/image.json"
+        }
+      ]
+    },
+    "contentImg": {
+      "type": "object",
+      "title": "Content Image",
+      "description": "The image to display with the textual content for this banner",
+      "allOf": [
+        {
+          "$ref": "https://raw.githubusercontent.com/neilmistryamplience/dc-example-website/willow/content-types/image.json"
         }
       ]
     },
     "header": {
-      "type": "string",
       "title": "Header",
       "description": "Header text for the banner",
       "validation": "Please enter less than 255 characters",
-      "minLength": 0,
-      "maxLength": 255
-    },
-    "header_fr-FR": {
-      "type": "string",
-      "title": "Header (fr-FR)",
-      "description": "French Header text for the banner",
-      "validation": "Please enter less than 255 characters",
-      "minLength": 0,
-      "maxLength": 255
-    },
-    "header_de-DE": {
-      "type": "string",
-      "title": "Header (de-DE)",
-      "description": "German Header text for the banner",
-      "validation": "Please enter less than 255 characters",
-      "minLength": 0,
-      "maxLength": 255
+      "allOf":[
+        {
+           "$ref":"http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+        }
+     ],
+     "properties":{
+        "values":{
+           "items":{
+              "properties":{
+                 "value":{
+                    "title": "Header",
+                    "description": "Header text for the banner",
+                    "type":"string",
+                    "minLength":0,
+                    "maxLength":255
+                 }
+              }
+           }
+        }
+     }
     },
     "subheader": {
       "type": "string",
@@ -76,7 +77,7 @@
       "description": "The action link / button for the banner",
       "allOf": [
         {
-          "$ref": "https://raw.githubusercontent.com/neilmistryamplience/dc-example-website/master/content-types/link.json"
+          "$ref": "https://raw.githubusercontent.com/neilmistryamplience/dc-example-website/willow/content-types/link.json"
         }
       ],
       "_interpolate": true
@@ -91,6 +92,20 @@
         "center"
       ]
     },
+    "percH": {
+      "title": "Horizontal alignment percentage",
+      "description": "A value between -100 and 100 (e.g. 30) Default is 0",
+      "type": "number",
+      "minimum": -100,
+      "maximum": 100
+    },
+    "percV": {
+      "title": "Vertical alignment percentage",
+      "description": "A value between -100 and 100 (e.g. 30) Default is 0",
+      "type": "number",
+      "minimum": -100,
+      "maximum": 100
+    },
     "style": {
       "type": "string",
       "title": "Style",
@@ -99,23 +114,35 @@
       "minLength": 0,
       "maxLength": 100
     },
+    "hideBG": {
+      "type": "boolean",
+      "title": "Hide Background",
+      "description": "Enable to have no background behind the banner text. Default is false"
+    },
     "stackMobileLayout": {
       "type": "boolean",
       "title": "Stack Mobile Layout",
       "description": "Enable to allow banner text to stack underneath the image on small screens. Default is false"
+    },
+    "analyticsEventLabel": {
+      "type": "string",
+      "title": "Analytics Event Label",
+      "description": "Textual description of the campaign used to group analytics"
     }
   },
   "propertyOrder": [
-    "metadata",
     "img",
+    "contentImg",
     "header",
-    "header_fr-FR",
-    "header_de-DE",
     "subheader",
+    "analyticsEventLabel",
     "description",
     "button",
     "alignment",
+    "percH",
+    "percV",
     "style",
     "stackMobileLayout"
-  ]
+  ],
+  "required": ["analyticsEventLabel"]
 }

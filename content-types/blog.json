@@ -1,6 +1,6 @@
 {
   "$schema": "http://bigcontent.io/cms/schema/v1/schema#",
-  "id": "https://raw.githubusercontent.com/neilmistryamplience/dc-example-website/master/content-types/blog.json",
+  "id": "https://raw.githubusercontent.com/neilmistryamplience/dc-example-website/willow/content-types/blog.json",
   "title": "Blog",
   "description": "A Blog Post",
   "allOf": [
@@ -16,7 +16,7 @@
       "description": "Blog Snippet",
       "allOf": [
         {
-          "$ref": "https://raw.githubusercontent.com/neilmistryamplience/dc-example-website/master/content-types/blogSnippet.json"
+          "$ref": "https://raw.githubusercontent.com/neilmistryamplience/dc-example-website/willow/content-types/blogSnippet.json"
         }
       ]
     },
@@ -34,14 +34,16 @@
               "contentType": {
                 "title": "",
                 "enum": [
-                  "https://raw.githubusercontent.com/neilmistryamplience/dc-example-website/master/content-types/slider.json",
-                  "https://raw.githubusercontent.com/neilmistryamplience/dc-example-website/master/content-types/video.json",
-                  "https://raw.githubusercontent.com/neilmistryamplience/dc-example-website/master/content-types/text.json",
-                  "https://raw.githubusercontent.com/neilmistryamplience/dc-example-website/master/content-types/externalBlock.json",
-                  "https://raw.githubusercontent.com/neilmistryamplience/dc-example-website/master/content-types/splitBlock.json",
-                  "https://raw.githubusercontent.com/neilmistryamplience/dc-example-website/master/content-types/image.json",
-                  "https://raw.githubusercontent.com/neilmistryamplience/dc-example-website/master/content-types/cardList.json",
-                  "https://raw.githubusercontent.com/neilmistryamplience/dc-example-website/master/content-types/banner.json"
+                  "https://raw.githubusercontent.com/neilmistryamplience/dc-example-website/willow/content-types/slider.json",
+                  "https://raw.githubusercontent.com/neilmistryamplience/dc-example-website/willow/content-types/video.json",
+                  "https://raw.githubusercontent.com/neilmistryamplience/dc-example-website/willow/content-types/text.json",
+                  "https://raw.githubusercontent.com/neilmistryamplience/dc-example-website/willow/content-types/externalBlock.json",
+                  "https://raw.githubusercontent.com/neilmistryamplience/dc-example-website/willow/content-types/splitBlock.json",
+                  "https://raw.githubusercontent.com/neilmistryamplience/dc-example-website/willow/content-types/image.json",
+                  "https://raw.githubusercontent.com/neilmistryamplience/dc-example-website/willow/content-types/cardList.json",
+                  "https://raw.githubusercontent.com/neilmistryamplience/dc-example-website/willow/content-types/banner.json",
+                  "https://raw.githubusercontent.com/neilmistryamplience/dc-example-website/willow/content-types/ugc.json",
+                  "https://raw.githubusercontent.com/neilmistryamplience/dc-example-website/willow/content-types/promoList.json"
                 ]
               }
             }

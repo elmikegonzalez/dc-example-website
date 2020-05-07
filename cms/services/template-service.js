@@ -3,9 +3,11 @@ const handlebarsService = require('./handlebars-service');
 const fs = require('fs');
 const path = require('path');
 
-function compileSlots(response) {
+function compileSlots(response, template) {
     var contentItems = amp.inlineContent(response);
-    var compiled = contentItems.map(compile);
+    var compiled = contentItems.map(function(content) {
+        return compile(content, template);
+    });
 
     return Promise.all(compiled)
         .then(function(outputs) {
@@ -19,16 +21,20 @@ function compileSlots(response) {
         });
 }
 
-function compile(content) {
-    return handlebarsService.process('mapping', content, {
+function compile(content, template) {
+    return handlebarsService.process(template || 'mapping', content, {
         getTemplate: getTemplate
     });
 }
 
+const templateCache = {};
 
 function getTemplate(name) {
-    console.log("getting the template!" + name)
-    return new Promise(function(resolve, reject) {
+    if(templateCache[name]) {
+        return templateCache[name];
+    }
+
+    const result = new Promise(function(resolve, reject) {
         fs.readFile(path.resolve(__dirname, '../templates/' + name + '.hbs'), "utf-8", function (error, data) {
             if(error) {
                 reject(error);
@@ -38,6 +44,11 @@ function getTemplate(name) {
         });
     });
 
+    if(process.env.env == 'production') {
+        templateCache[name] = result;
+    }
+
+    return result;
 }
 
 

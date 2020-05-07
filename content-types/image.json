@@ -1,6 +1,6 @@
 {
   "$schema": "http://bigcontent.io/cms/schema/v1/schema#",
-  "id": "https://raw.githubusercontent.com/neilmistryamplience/dc-example-website/master/content-types/image.json",
+  "id": "https://raw.githubusercontent.com/neilmistryamplience/dc-example-website/willow/content-types/image.json",
   "title": "Image",
   "description": "Basic image with SEO information and allow roundels",
   "allOf": [
@@ -39,7 +39,7 @@
       "title": "Roundel",
       "description": "Roundel image",
       "items": {
-        "$ref": "https://raw.githubusercontent.com/neilmistryamplience/dc-example-website/master/content-types/roundel.json"
+        "$ref": "https://raw.githubusercontent.com/neilmistryamplience/dc-example-website/willow/content-types/roundel.json"
       },
       "minItems": 0,
       "maxItems": 1,

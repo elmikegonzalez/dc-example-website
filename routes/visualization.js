@@ -11,6 +11,7 @@ const templateService = require('../cms/services/template-service');
 router.get('/', function(req, res, next) {
 
     var client = new ContentDeliveryClient(req.query.vse || settings.cms, settings.cmsAccount);
+    var locale = req.query.locale;
     var contentId = req.query.content;
 
     Promise.resolve([contentId])

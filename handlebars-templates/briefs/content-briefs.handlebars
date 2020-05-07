@@ -1,0 +1,56 @@
+<div class="content-brief">
+    <div class="copy-brief">
+        <div class="copy-block" style="float:left" >
+            <div class="content-brief-header">{{type}}</div>
+            <div class="copy-block-text">
+                <p style="font-weight: bold">Copy</p>
+            <p>{{#each copy}}
+                {{this}}<br/>
+            {{/each}}</p>
+            </div>
+        </div>
+        <div class="copy-block" style=" word-wrap: break-word;float:left"  >
+            <div class="content-brief-header">Notes</div>
+            <div class="copy-block-text">
+                <p>{{#each notes}}
+                {{this}}<br/>
+            {{/each}}</p></div>
+        </div>
+        <br class="clear" />
+        {{#equalsLength images 0}}
+            <br class="clear" />
+        {{else}}
+        <div class="images-section">
+            <p class="">Associated Images</p>
+            {{#each images}}
+                <div class="image-block">
+                    <p class="image-text" >{{image-name}}</p>
+                    {{#with image}}
+                        <img alt="{{../image-alt}}" class="image-brief" src="{{>image-url}}.jpeg?w=1440">
+                    {{/with}}
+                    <p class="image-text" >{{image-description}}</p>
+                    <br class="clear" />
+                </div>
+            {{/each}}
+            <br class="clear" />
+        </div>
+        <br class="clear" />
+        {{/equalsLength}}
+        {{#equalsLength links 0}}
+            <br class="clear" />
+        {{else}}
+            <div class="images-section">
+                <p>Associated links and CTAs</p>
+                {{#each links}}
+                    <div style="text-align: left;margin-bottom: 7px">
+                        <p class="link-text" ><b>Link Description:</b> {{link-descriptiont}}</p>
+                        <p class="link-text" ><b>URL:</b> {{url}}</p>
+                        <p class="link-text" ><b>link text:</b> {{link-text}}</p>
+                    </div>
+                {{/each}}
+                <br class="clear" />
+            </div>
+            <br class="clear" />
+        {{/equalsLength}}
+    </div>
+</div>

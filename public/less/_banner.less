@@ -14,10 +14,26 @@
     .amp-ca-banner-info {
         font-size: 22px;
         text-align: center;
-        background: #fff;
+        //background-color:rgba(255, 255, 255, 0);
         color: #000;
         padding: 15px;
-        min-width: 200px;
+        min-width: 400px;
+        max-width: 600px;
+        &.black{
+            background-color:rgba(255, 255, 255, 0.6);
+            color:#000;
+        }
+        &.white{
+            background-color:rgba(0, 0, 0, 0.4);
+            color:#fff;
+            @media (max-width: 768px) {
+                color:#000;
+                background-color:rgba(255, 255, 255, 0);
+            }
+        }
+        &.hideBG{
+            background:none;
+        }
     }
 
     .amp-ca-banner-pic {
@@ -34,35 +50,118 @@
         text-align: center;
     }
 
+    
+
     .amp-ca-banner-info-wrap {
         color: #fff;
-        width: 40%;
+        //width: 40%;
         height: 100%;
         position: absolute;
         top: 0;
         white-space: normal;
         display: inline-block;
-        left: 0;
-        right: 0;
+        //left: 0;
+        //right: 0;
         margin: auto;
 
         &[data-align='left'] {
-            left: 65px;
+            left: 40px;
             margin: 0;
         }
 
         &[data-align='right'] {
-            right: 65px;
+            right: 40px;
             margin: 0;
         }
 
-        &:before {
+        &[data-align='center'] {
+            right:0;
+            left:0;
+            margin: auto;
+            width:50%;
+            .amp-ca-banner-info{
+                max-width: 100%;
+            }
+        }
+
+         &:before {
             content: '';
             display: inline-block;
             height: 100%;
             vertical-align: middle;
-            margin-right: -1em;
-            /* Adjusts for spacing */
+            margin-right: -1.3em;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .amp-ca-banner-info {
+            min-width: 0;
+        }
+        .amp-ca-banner-info-wrap{
+            width:100%;
+            height:auto;
+
+            &[data-align='left'] {
+                left: 10px;
+                margin: 0;
+            }
+
+            &[data-align='right'] {
+                right: 10px;
+                margin: 0;
+            }
+
+            &[data-align='center'] {
+                left: 0;
+                top:0;
+                margin: auto;
+            }
+        }
+
+        .amp-ca-banner-info-wrap.amp-ca-info-normal{
+            width:100%;
+            height:auto;
+
+            &[data-align='left'] {
+                left: 10px !important;
+                top:0px !important;
+                margin: 0;
+            }
+
+            &[data-align='right'] {
+                right: 10px !important;
+                top:0px !important;
+                margin: 0;
+            }
+
+            &[data-align='center'] {
+                left: 0px !important;
+                top:0px !important;
+                margin: auto;
+            }
+
+        }
+
+        .amp-ca-banner-info-wrap.amp-ca-info-bottom{
+                position: relative;
+                top: 0;
+                left: 0;
+                right: auto;
+                display: block;
+                width: 100%;
+                text-align: center;
+                padding: 0 15px 10px 15px;
+                -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+
+                &:before {
+                    content: '';
+                    display: inline-block;
+                    height: auto;
+                    vertical-align: middle;
+                    margin-right: -1em;
+                    /* Adjusts for spacing */
+                }
         }
     }
 
@@ -73,31 +172,52 @@
 
     .amp-ca-banner-header {
         font-size: 32px;
+        font-weight: 800;
     }
 
-    .amp-ca-banner-description,
+
     .amp-ca-banner-subheader {
         font-size: 16px;
-        margin-top: 15px;
+        margin-top: 12px;
+    }
+
+    .amp-ca-banner-description{
+        font-size: 12px;
+        margin-top: 10px;
     }
 
     .amp-ca-banner-button {
-        font-size: 20px;
+        font-size: 18px;
         margin-top: 15px;
         display: inline-block;
-        width: 100%;
-        padding: 17px 15px;
-        background: #fff;
+        //width: 100%;
+        border: solid 2px white;
+        padding: 8px 16px;
+        background: #000;
+        color:#fff;
         text-decoration: none;
-        font-weight: bold;
+        //font-weight: bold;
         box-sizing: border-box;
+        min-width: 120px;
         &.black {
             background: #000;
             color: #fff;
+            border: solid 2px white;
+        }
+        &.black:hover {
+            background: #fff;
+            color: #000;
+            border: solid 2px black;
         }
         &.white {
             background: #fff;
             color: #000;
+            border: solid 2px black;
+        }
+        &.white:hover {
+            background: #000;
+            color: #fff;
+            border: solid 2px white;
         }
     }
 }

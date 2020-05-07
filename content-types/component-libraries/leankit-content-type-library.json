@@ -1,0 +1,32 @@
+﻿{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "id": "https://raw.githubusercontent.com/zestrax/dynamic-content-samples/Development/content-types/component-libraries/leankit-content-type-library.json",
+    "type": "object",
+    "title": "Leankit integration schema",
+    "description": "core content type components to build leankit integration",
+    "definitions": {
+        "leankit": {
+            "type": "object",
+            "title": "leankit properties",
+            "description": "provides properties for leankit integration",
+            "properties": {
+                "card-id": {
+                    "title": "LeanKit Card ID",
+                    "description": "Automated - Card ID is the reference back to leankit",
+                    "type": "string",
+                    "format": "text"
+                },
+                "status": {
+                    "title": "Card status",
+                    "description": "Automated - where in the Kanban board the card is",
+                    "type": "string",
+                    "format": "text"
+                }
+            },
+            "propertyOrder": [
+                "card-id",
+                "status"
+            ]
+        }
+    }
+}

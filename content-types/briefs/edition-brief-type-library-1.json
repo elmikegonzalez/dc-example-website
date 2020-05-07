@@ -1,0 +1,57 @@
+﻿{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "id": "https://raw.githubusercontent.com/neilmistryamplience/dc-example-website/willow/content-types/briefs/edition-brief-type-library-1.json",
+    "type": "object",
+    "title": "Core type schema",
+    "description": "core content type definitions to for brief specific content types",
+    "additionalProperties": false,
+    "definitions": {
+        "edition-brief": {
+            "type": "object",
+            "title": "EDITION LEVEL BRIEF",
+            "properties": {
+                "reference": {
+                    "type": "string",
+                    "title": "Edition brief reference name",
+                    "format": "text"
+                },
+                "designer": {
+                    "type": "string",
+                    "title": "Designer",
+                    "format": "text"
+                },
+                "content-briefs": {
+                    "type": "array",
+                    "title": "CONTENT BRIEFS",
+                    "maxItems": 20,
+                    "items": {
+                        "$ref": "./content-brief-type-library-1.json#/definitions/content-brief"
+                    }
+                },
+                "images": {
+                    "type": "array",
+                    "title": "IMAGES",
+                    "maxItems": 5,
+                    "items": {
+                        "$ref": "../component-libraries/image-content-type-library.json#/definitions/descriptive-image"
+                    }
+                },
+                "page-links": {
+                    "type": "array",
+                    "title": "PAGE LINKS",
+                    "maxItems": 5,
+                    "items": {
+                        "$ref": "../component-libraries/links-content-type-library.json#/definitions/descriptive-link"
+                    }
+                }
+            },
+            "propertyOrder": [
+                "reference",
+                "designer",
+                "content-briefs",
+                "images",
+                "page-links"
+            ]
+        }
+    }
+}

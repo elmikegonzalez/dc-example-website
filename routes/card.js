@@ -15,9 +15,11 @@ router.get('/', function(req, res, next) {
 
     Promise.resolve([contentId])
         .then(client.getByIds.bind(client))
-        .then(templateService.compileSlots)
+        .then(function(response) {
+            return templateService.compileSlots(response, 'cards/mapping-container');
+        })
         .then(function(slots) {
-            var pageModel = {content: slots[contentId] };
+            var pageModel = {content: slots[contentId], contentId: contentId };
             return pageModel;
         })
         .then(function(pageModel) {

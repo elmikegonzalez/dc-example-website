@@ -1,0 +1,5 @@
+{{#if defaultHost}}
+    <div class="dc-card dc-card-image">
+        <img data-src="//{{defaultHost}}/i/{{endpoint}}/{{name}}.webp?w=500&aspect=1.4:1&sm=aspect&poi={($root.layer0.metadata.pointOfInterest.w==0)?0.5:$root.layer0.metadata.pointOfInterest.x},{($root.layer0.metadata.pointOfInterest.w==0)?0.5:$root.layer0.metadata.pointOfInterest.y},{$root.layer0.metadata.pointOfInterest.w},{$root.layer0.metadata.pointOfInterest.h}&scaleFit=poi" />
+    </div>
+{{/if}}
